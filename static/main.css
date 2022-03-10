@@ -133,9 +133,12 @@ h6 {
 .song-title {
     margin-top: 1rem;
     margin-bottom: .5rem;
-    font-size: 12px;
+    font-size: 13px;
     color: #404252;
     font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .song-subtitle {
@@ -159,7 +162,7 @@ h6 {
     border-radius: 10px;
     padding: 20px;
     background-color: #B6E6D8;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     overflow: hidden;
     color: #289696;
 }
@@ -184,4 +187,27 @@ h6 {
 
 .btn-sm {
     font-size: 12px;
+}
+
+.table td, .table th {
+    font-size: 13px;
+    vertical-align: top;
+    border-top: none !important;
+}
+
+.thumbnail {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px !important;
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+#recently-played th {
+    text-align: center;
+  vertical-align: middle;
+  line-height: 45px;
+}
+
+.add {
+    background-color: rgba(0, 0, 0, .05);
 }

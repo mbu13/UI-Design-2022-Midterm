@@ -6,6 +6,7 @@ from flask import Response, request, jsonify
 # Data imports
 from db_recommended import recommended
 from db_songs import songs
+from db_recently_played import recently_played
 
 app = Flask(__name__)
 
@@ -13,7 +14,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('homepage.html', playlists=recommended)  
+    return render_template('homepage.html', playlists=recommended, recent=recently_played)  
 
 # AJAX FUNCTIONS
 
