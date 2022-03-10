@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script src="{{ url_for('static', filename = 'home.js') }}"></script>
+
+<script>
+    let playlists = {{playlists|tojson}};
+</script>
+
+<br>
+
+<div class="row">
+    <div class="banner">
+        <div class="banner-body">
+            <h5>Playlists made by you.</h5>
+            <p>Listen, create, and curate your musical playlists for any mood you're in and whatever job you do.
+            </p>
+        </div>
+        
+        <button type="button" class="btn btn-sm btn-outline-info">Get Started</button>
+        <img src="{{ url_for('static', filename = 'stock-hp.png') }}" class="img-fluid">
+    </div>
+
+    <div class="card group">
+        <h6>Recommended</h6>
+
+        <div id="recommended" class="row">
+            <!--Dynamically input-->
+        </div>
+        
+    </div>
+    
+</div>
+
+
+{% endblock %}

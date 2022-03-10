@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<style>
+    iframe {
+        width: 100%;
+        height: 500px;
+        border: none;
+        padding: 18px;
+    }
+
+    #song-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    #song-title {
+        line-height: 60px;
+        padding-left: 80px;
+    }
+</style>
+
+<script src="{{ url_for('static', filename = 'view.js') }}"></script>
+
+<script>
+    let song = {{song|tojson}};
+</script>
+
+<br>
+<h2 id="title"><!--Title--></h2>
+<br>
+
+<!--Video frame-->
+<iframe id="ytframe"></iframe>
+
+<div id="song-data">
+    <!--Dynamic song metadata-->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-body">
+                        <img id="song-img" class="rounded float-left">
+                        <p id="song-title" class="card-text align-middle"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card" style="width: 18rem;">
+                    <ul class="list-group list-group-flush">
+                        <li id="artists" class="list-group-item"></li>
+                        <li id="date" class="list-group-item"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+      
+</div>
+
+{% endblock %}

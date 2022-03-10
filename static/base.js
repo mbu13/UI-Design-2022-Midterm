@@ -1,0 +1,19 @@
+$(document).ready(function() {
+
+    function search(query) {
+        if(query.trim()) {
+            window.location.href = '/search/' + query.trim();
+        }
+
+        $("#search-query").val("");
+        $("#search-query").focus();
+    }
+
+    $("#search-form").submit(function(e) {
+        e.preventDefault();
+        
+        console.log("Searching...");
+        let query = $("#search-query").val();
+        search(query);
+    });
+})

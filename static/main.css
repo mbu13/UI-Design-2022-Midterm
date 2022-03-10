@@ -1,0 +1,187 @@
+body {
+    font-family: 'Comfortaa', cursive;
+    overflow: hidden;
+}
+
+.navbar {
+    margin-top: 1rem;
+}
+
+.left-bar {
+    display: block;
+    padding-left: 2em;
+    padding-top: 1em;
+    height: 100%;
+    overflow: auto;
+    border-right: 1px solid rgba(0, 0, 0, .1);
+    overflow-y: hidden;
+}
+
+.left-bar h7 {
+    font-size: 12px;
+    font-weight: bold;
+    color: #b3b5bd;
+}
+
+.left-bar a {
+    display: block;
+    color: #404252;
+    margin-top: 15px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+}
+
+.left-bar a:hover {
+    color: #289696;
+}
+
+.left-bar a i {
+    margin-right: 5px;
+    font-size: 1rem;
+}
+
+.left-bar a.title {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0 !important;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    color: #404252;
+}
+
+.left-bar a.title i {
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.right-bar {
+    display: block;
+    padding-left: 2em;
+    padding-top: 1em;
+    height: 100%;
+    overflow: auto;
+    border-left: 1px solid rgba(0, 0, 0, .1);
+    overflow-y: hidden;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.container {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+    height: 95vh;
+    overflow-y: scroll !important;
+}
+
+.card {
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 10px;
+    width: 100%;
+    padding: 20px;
+}
+
+.card.group {
+    margin-bottom: 1.5rem;
+}
+
+.card-playlist {
+    transition: transform .2s;
+}
+
+.card-playlist:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.card .img-container {
+    width: 100%;
+    position: relative;
+}
+
+.img-container .overlay {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    color: #289696 !important;
+    background-color: rgba(255, 255, 255, 1);
+    font-size: 15px;
+}
+
+h6 {
+    color: #404252 !important;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.rounded {
+    border-radius: 15px !important;
+}
+
+.song-title {
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    font-size: 12px;
+    color: #404252;
+    font-weight: bold;
+}
+
+.song-subtitle {
+    margin: 0 !important;
+    font-size: 10px;
+    color: #b3b5bd;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.active {
+    color: #289696 !important;
+    font-weight: bold !important;
+    border-right: 4px solid #289696;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #B6E6D8;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    color: #289696;
+}
+
+.banner img {
+    position: absolute;
+    position: absolute;
+    top: 30%;
+    right: -25%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
+
+.banner .banner-body {
+    width: 50%;
+}
+
+.banner .banner-body p {
+    margin-top: 1rem;
+    font-size: 13px;
+}
+
+.btn-sm {
+    font-size: 12px;
+}

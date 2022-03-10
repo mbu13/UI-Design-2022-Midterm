@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<style>
+    .song-img {
+        width: 60px;
+        height: 60px;
+        margin-right: 20px;
+    }
+</style>
+
+<script src="{{ url_for('static', filename = 'search.js') }}"></script>
+
+<script>
+    let results = {{results|tojson}};
+</script>
+
+<br>
+<h2>Search Results for "<b id="query"></b>"</h2>
+<br>
+
+<div id="search-body">
+    <div class="card" style="width: 18rem;">
+        <ul id="search-results" class="list-group list-group-flush">
+            <!--Dynamic content-->
+        </ul>
+    </div>
+</div>
+
+{% endblock %}
