@@ -1,6 +1,9 @@
 const USER = "Matt Bu";
 
 $(document).ready(function () {
+    $('#nav-title').html("Home");
+    $('#nav-home').addClass('active');
+
     function clearRecommended() {
         $("#recommended").empty();
     }
@@ -15,7 +18,7 @@ $(document).ready(function () {
         $.each(playlists, function (key, value) {
             $("#recommended").append(
                 '<div class="col-3"> \
-                    <div class="card card-playlist"> \
+                    <div class="card card-playlist" data-target="' + value.id + '"> \
                         <div class="img-container"> \
                             <img src="' + value.image + '" class="img-fluid rounded"> \
                             <a class="btn overlay rounded"><i class="bi-play-fill"></i></a> \
@@ -37,12 +40,15 @@ $(document).ready(function () {
             $("#recently-played").append(
                 '<tr> \
                     <th>' + index + '</th> \
-                    <td><img src="' + value.image + '" class="thumbnail rounded"></td> \
+                    <td class="td-thumbnail"><img src="' + value.image + '" class="thumbnail rounded"></td> \
                     <td> \
-                        <h7 class="song-title">' + value.name + '</h7> \
+                        <p class="song-title">' + value.name + '</p> \
                         <p class="song-subtitle">' + value.artists[0].name + '</p> \
                     </td> \
-                    <td><button class="btn add rounded playBtn"><i class="bi-youtube"></i></button></td> \
+                    <td><button class="btn add rounded playBtn" data-name="' + value.name + '"\
+                        data-artist="' + value.artists[0].name + '" \
+                        data-video="' + value.youtube + '"> \
+                        <i class="bi-play-fill"></i></button></td> \
                     <td><a class="btn add rounded"><i class="bi-plus-lg"></i></a></td> \
                 </tr>'
             );
@@ -52,8 +58,7 @@ $(document).ready(function () {
     displaySongs(playlists);
     displayRecents(recentlyPlayed);
 
-    $(".playBtn").click(function() {
-        console.log("Showing...");
-        $('#videoModal').modal();
+    $(document).on('click', ".card-playlist", function(){ 
+        window.location = "/view/" + $(this).data('target');
     });
 })

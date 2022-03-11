@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<script src="{{ url_for('static', filename = 'home.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/home.js') }}"></script>
 
 <script>
     let playlists = {{ playlists| tojson}};
@@ -20,7 +20,7 @@
         </div>
 
         <button type="button" class="btn btn-sm btn-outline-info">Get Started</button>
-        <img src="{{ url_for('static', filename = 'stock-hp.png') }}" class="img-fluid">
+        <img src="{{ url_for('static', filename = 'images/stock-hp.png') }}" class="img-fluid">
     </div>
 
     <div class="card group">

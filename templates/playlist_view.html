@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script src="{{ url_for('static', filename = 'js/playlist_view.js') }}"></script>
+
+<script>
+    let playlist = {{ playlist | tojson}};
+</script>
+
+<br>
+
+<div class="row">
+    <div class="col-3">
+        <img id="playlist-img" src="" class="img-fluid rounded">
+        <div class="card group">
+            <p class="playlist-title"><i class="bi-person"></i> <span id="owner"></span></p>
+            <p class="song-title"><i class="bi-calendar-plus"></i> <span id="date-created"></span></p>
+        </div>
+    </div>
+    <div class="col-9">
+        <div class="card group">
+            <b id="playlist-title" class="playlist-title"></b>
+            <p id="playlist-desc" class="song-subtitle"></p>
+        </div>
+
+        <div class="card group">
+            <b class="playlist-title">Songs</b>
+
+            <table class="table">
+                <tbody id="playlist">
+                    <!--Dynamically input-->
+                </tbody>
+            </table>
+
+            <a id="edit-playlist" class="btn rounded btn-outline" href=""><i class="bi-pencil-square"></i> Edit playlist</a>
+  
+        </div>   
+    </div>
+</div>
+
+
+{% endblock %}

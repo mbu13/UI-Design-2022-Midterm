@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script src="{{ url_for('static', filename = 'js/playlist_edit.js') }}"></script>
+
+<script>
+    let playlist = {{ playlist | tojson}};
+</script>
+
+<br>
+
+<div class="row">
+    <div class="col-3">
+        <img id="playlist-img" src="" class="img-fluid rounded">
+        <div class="card group">
+            <p class="playlist-title"><i class="bi-person"></i> <span id="owner"></span></p>
+            <p class="song-title"><i class="bi-calendar-plus"></i> <span id="date-created"></span></p>
+        </div>
+    </div>
+    <div class="col-9">
+        <div class="card group">
+            <input id="playlist-name" class="form-control" type="text" placeholder="Enter a name">
+            <br>
+            <textarea class="form-control" id="playlist-desc" rows="3"></textarea>
+        </div>
+
+        <div class="card group">
+            <b class="playlist-title">Songs</b>
+
+            <table class="table">
+                <tbody id="playlist">
+                    <!--Dynamically input-->
+                </tbody>
+            </table>
+
+            <div class="form-inline">
+                <select class="custom-select my-1 mr-sm-2" id="song-select">
+                    <option selected>Select a song</option>
+                    <option value="1">STAY (with Justin Bieber)</option>
+                    <option value="2">Leave Before You Love Me</option>
+                    <option value="3">Shivers</option>
+                </select>
+
+                <a id="add-song" class="btn btn-outline rounded"><i class="bi-plus"></i> preview</a>
+            </div>
+
+        </div>
+
+        <a id="save-edit" class="btn rounded btn-accent"><i class="bi-check"></i> Save changes</a>
+        <a id="discard-edit" class="btn rounded delete"><i class="bi-x"></i> Discard changes</a>
+    </div>
+</div>
+
+
+{% endblock %}

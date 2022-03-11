@@ -43,5 +43,18 @@ songs = {
         ],
         "dateReleased": "1646181966",
         "description": "Ed Sheeran is back!"
+    },
+    4: {
+        "id": 4,
+        "image": "https://i.scdn.co/image/ab67616d0000b2732fb1745809e709d21953ba33",
+        "name": "iPad",
+        "youtube": "https://www.youtube.com/embed/FYxUJFD9Ye4",
+        "artists": [
+            {
+                "name": "The Chainsmokers"
+            }
+        ],
+        "dateReleased": "1646181966",
+        "description": "Sorry, the Chainsmokers are back."
     }
 }

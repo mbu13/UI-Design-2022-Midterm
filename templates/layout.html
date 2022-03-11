@@ -10,21 +10,23 @@
   <!-- jquery -->
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
-  <script src="{{ url_for('static', filename = 'base.js') }}"></script>
+  <script src="{{ url_for('static', filename = 'js/base.js') }}"></script>
 
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-  
-  <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
-    </style>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
   <title>Adio</title>
 </head>
@@ -38,13 +40,14 @@
 
         <a class="title" href="/"><i class="bi-play-circle-fill"></i> Adio</a>
 
+        <!-- Menu items -->
         <h7>MENU</h7>
-        <a class="active" href="/"><i class="bi-house"></i> Home</a>
+        <a id="nav-home" href="/"><i class="bi-house"></i> Home</a>
         <br>
 
         <h7>LIBRARY</h7>
-        <a href="#news"><i class="bi-card-list"></i> Playlists</a>
-        <a href="#news"><i class="bi-heart"></i> Favorites</a>
+        <a id="nav-playlists" href="/playlists"><i class="bi-card-list"></i> Playlists</a>
+        <a id="nav-favorites" href="#news"><i class="bi-heart"></i> Favorites</a>
 
         <br>
         <h7>GENERAL</h7>
@@ -55,7 +58,7 @@
     <!-- Mid container -->
     <div class="col-7">
       <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="/">Home</a>
+        <a id="nav-title" class="navbar-brand" href="/"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -63,16 +66,12 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <!--
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-          </li>
-          -->
           </ul>
           <form id="search-form" class="form-inline my-2 my-lg-0">
             <input id="search-query" class="form-control mr-sm-2 rounded" type="search" placeholder="Search"
               aria-label="Search">
-            <button id="search-btn" class="btn btn-outline my-2 my-sm-0" type="submit"><i class="bi-search"></i></button>
+            <button id="search-btn" class="btn my-2 my-sm-0" type="submit"><i
+                class="bi-search"></i></button>
           </form>
         </div>
       </nav>
@@ -84,10 +83,112 @@
     </div>
     <div class="col-3">
       <div class="right-bar">
-        One of three columns
+
+        <!-- Profile card -->
+        <div class="profile card">
+          <div class="row">
+            <div class="col-3">
+              <img src="{{ url_for('static', filename = 'images/me.png') }}" class="img-fluid">
+            </div>
+            <div class="col-9">
+              <h7 class="song-title">Matt Bu</h7>
+              <p class="song-subtitle">mb4753@columbia.edu</p>
+            </div>
+          </div>
+        </div>
+        <br>
+
+        <h6>Top Genres</h6>
+
+        <div id="genres">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="genre">
+                <img src="{{ url_for('static', filename = 'images/stock-happy.png') }}" class="img-fluid rounded">
+                <p class="song-title">Happy</p>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="genre">
+                <img src="{{ url_for('static', filename = 'images/stock-chill.png') }}" class="img-fluid rounded">
+                <p class="song-title">Chill</p>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="genre">
+                <img src="{{ url_for('static', filename = 'images/stock-sad.png') }}" class="img-fluid rounded">
+                <p class="song-title">Sad</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="genre">
+                <img src="{{ url_for('static', filename = 'images/stock-study.png') }}" class="img-fluid rounded">
+                <p class="song-title">Study</p>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="genre">
+                <img src="{{ url_for('static', filename = 'images/stock-party.png') }}" class="img-fluid rounded">
+                <p class="song-title">Party</p>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="genre">
+                <img src="{{ url_for('static', filename = 'images/stock-food.png') }}" class="img-fluid rounded">
+                <p class="song-title">Cooking</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Playback -->
+        <div id="playback" class="card-solid">
+
+          <p><b>Now Playing</b></p>
+          <div id="bars">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          <br>
+          <iframe id="ytframe" src="" allow="autoplay"></iframe>
+
+          <br><br>
+          <p class="title"></p>
+          <p class="subtitle"></p>
+        </div>
       </div>
     </div>
-  </div>
+
+    <!-- Modal -->
+    <div class="modal" id="addSongModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+
+          <div class="modal-body">
+            <select id="song-select" class="form-select form-select-sm" aria-label=".form-select-sm example">
+              <option selected>Select a song</option>
+              <option value="1">STAY (with Justin Bieber)</option>
+              <option value="2">Leave Before You Love Me</option>
+              <option value="3">Shivers</option>
+            </select>
+
+            <br>
+            <button id="add-song" class="btn rounded">Add</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
 
 </body>
 
