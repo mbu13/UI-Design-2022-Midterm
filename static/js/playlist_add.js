@@ -3,54 +3,17 @@ let playlist_songs = [];
 
 $(document).ready(function() {
 
-    $('#nav-title').html("Playlists > " + playlist.name);
-    $('#nav-playlists').addClass('active');
-    //$('#nav-title').attr('href', '/playlists/');
+    $('#nav-title').html("Create Playlist");
+    $('#nav-add-playlists').addClass('active');
 
-    function epochToDate(epoch) {
-        if (epoch < 10000000000)
-            epoch *= 1000; 
-        var epoch = epoch + (new Date().getTimezoneOffset() * -1);       
-        return new Date(epoch);
+    function clearFields() {
+        $("#playlist-name").val("");
+        $("#playlist-desc").val("");
+        $("#playlist-image-url").val("");
+        $("#playlist tr").remove();
+
+        $("#playlist-name").focus();
     }
-
-    function formatDate(date) {
-        var year = date.getFullYear();
-      
-        var month = (1 + date.getMonth()).toString();
-        month = month.length > 1 ? month : '0' + month;
-      
-        var day = date.getDate().toString();
-        day = day.length > 1 ? day : '0' + day;
-        
-        return month + '/' + day + '/' + year;
-    }
-
-    function clearPlaylist() {
-        $("#playlist").empty();
-    }
-
-    function displayPlaylist(playlist) {
-        clearPlaylist();
-
-        $("#playlist-img").attr("src", playlist.image);
-        $("#owner").html(playlist.createdBy);
-        $("#date-created").html(formatDate(epochToDate(playlist.dateCreated)));
-        $("#playlist-name").val(playlist.name);
-        $("#playlist-desc").html(playlist.description);
-        $("#playlist-image-url").val(playlist.image);
-
-        let index = 0;
-        $.each(playlist.tracks, function (key, value) {
-            // If playlist not made by current user then disable edit
-            let disabled = value.createdBy != USER ? "disabled" : "enabled";
-
-            index += 1;
-            addToPreview(value, index);
-        });
-    }
-
-    displayPlaylist(playlist);
 
     function addToPreview(song, index) {
 
@@ -105,13 +68,16 @@ $(document).ready(function() {
         console.log(playlist.id)
 
         $.ajax({
-            type: "PATCH",
-            url: "/playlists/" + playlist.id,                
+            type: "POST",
+            url: "/playlists",                
             dataType : "json",
             contentType: "application/json; charset=utf-8",
             data : JSON.stringify(new_fields),
             success: function(result){
-                window.location.href = '/view/' + playlist.id;
+                 $("#success-link").attr('href', '/view/' + result.id);
+                 $(".success-alert").fadeIn();
+
+                 clearFields();
             },
             error: function(request, status, error){
                 console.log("Error");
@@ -127,7 +93,7 @@ $(document).ready(function() {
         $("#dialog-body").html("Are you sure you want to discard all changes?");
 
         $(document).on('click', "#confirm-btn", function() { 
-            window.location.href = '/view/' + playlist.id;
+            window.location.href = '/playlists';
         });
 
         $("#alertModal").modal('toggle');

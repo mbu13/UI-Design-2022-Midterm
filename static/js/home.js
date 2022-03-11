@@ -34,10 +34,12 @@ $(document).ready(function () {
     function displayRecents(recentlyPlayed) {
         clearRecents();
 
-        let index = 0;
+        console.log(recentlyPlayed);
+
+        let index = Object.keys(recentlyPlayed).length + 1;
         $.each(recentlyPlayed, function (key, value) {
-            index += 1;
-            $("#recently-played").append(
+            index -= 1;
+            $("#recently-played").prepend(
                 '<tr> \
                     <th>' + index + '</th> \
                     <td class="td-thumbnail"><img src="' + value.image + '" class="thumbnail rounded"></td> \
@@ -47,9 +49,9 @@ $(document).ready(function () {
                     </td> \
                     <td><button class="btn add rounded playBtn" data-name="' + value.name + '"\
                         data-artist="' + value.artists[0].name + '" \
-                        data-video="' + value.youtube + '"> \
+                        data-video="' + value.youtube + '" \
+                        data-songid="' + value.id + '"> \
                         <i class="bi-play-fill"></i></button></td> \
-                    <td><a class="btn add rounded"><i class="bi-plus-lg"></i></a></td> \
                 </tr>'
             );
         });

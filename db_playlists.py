@@ -37,11 +37,11 @@ all_playlists = {
     },
     5 : {
         "id": 5,
-        "image": "https://images.unsplash.com/photo-1536374863418-41d096a7e679?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        "image": "https://i.scdn.co/image/ab67706f0000000388da0fdebcb3a61f823e3e44",
         "name": "My Fire Tracks",
         "dateCreated": "1646181966",
         "description": "Just for me.",
-        "createdBy": "Matt Bu",
-        "tracks": [1, 2]
+        "createdBy": "mb4753",
+        "tracks": [1, 2, 5, 6]
     },
 }

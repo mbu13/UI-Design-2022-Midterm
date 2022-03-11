@@ -43,11 +43,12 @@
         <!-- Menu items -->
         <h7>MENU</h7>
         <a id="nav-home" href="/"><i class="bi-house"></i> Home</a>
+        <a id="nav-add-playlists" href="/add"><i class="bi-plus-square"></i> Create</a>
         <br>
 
         <h7>LIBRARY</h7>
         <a id="nav-playlists" href="/playlists"><i class="bi-card-list"></i> Playlists</a>
-        <a id="nav-favorites" href="#news"><i class="bi-heart"></i> Favorites</a>
+        <a id="nav-genres" href="/genres"><i class="bi-bookmarks"></i> Genres</a>
 
         <br>
         <h7>GENERAL</h7>
@@ -169,26 +170,22 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal" id="addSongModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    <div class="modal" id="alertModal" tabindex="-1" role="dialog"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
 
           <div class="modal-body">
-            <select id="song-select" class="form-select form-select-sm" aria-label=".form-select-sm example">
-              <option selected>Select a song</option>
-              <option value="1">STAY (with Justin Bieber)</option>
-              <option value="2">Leave Before You Love Me</option>
-              <option value="3">Shivers</option>
-            </select>
-
-            <br>
-            <button id="add-song" class="btn rounded">Add</button>
+            <p id="dialog-body"></p>
+            <button id="confirm-btn" class="btn btn-outline rounded">Yes</button>
           </div>
 
         </div>
       </div>
     </div>
+
+    <!--Credit-->
+    <div class="watermark">Author: Matt Bu <p>COMS4170 // Spring 2022</p></div>
 
 </body>
 

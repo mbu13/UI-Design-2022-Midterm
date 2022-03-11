@@ -55,7 +55,8 @@ $(document).ready(function() {
                     </td> \
                     <td><button class="btn add rounded playBtn" data-name="' + value.name + '"\
                         data-artist="' + value.artists[0].name + '" \
-                        data-video="' + value.youtube + '"> \
+                        data-video="' + value.youtube + '" \
+                        data-songid="' + value.id + '"> \
                         <i class="bi-play-fill"></i></button></td> \
                 </tr>'
             );

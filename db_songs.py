@@ -56,5 +56,31 @@ songs = {
         ],
         "dateReleased": "1646181966",
         "description": "Sorry, the Chainsmokers are back."
-    }
+    },
+    5: {
+        "id": 5,
+        "image": "https://i.scdn.co/image/ab67616d0000b273c7c579c9b540f56584909d28",
+        "name": "Light Switch",
+        "youtube": "https://www.youtube.com/embed/WFsAon_TWPQ",
+        "artists": [
+            {
+                "name": "Charlie Puth"
+            }
+        ],
+        "dateReleased": "1646181966",
+        "description": "The TikTok musical genius."
+    },
+    6: {
+        "id": 6,
+        "image": "https://i.scdn.co/image/ab67616d0000b273ca8a9f328a1971cc6352b963",
+        "name": "Dynamite ",
+        "youtube": "https://www.youtube.com/embed/gdZLi9oWNZg",
+        "artists": [
+            {
+                "name": "BTS"
+            }
+        ],
+        "dateReleased": "1646181966",
+        "description": "BTS."
+    },
 }

@@ -20,9 +20,14 @@
     </div>
     <div class="col-9">
         <div class="card group">
+            <label for="basic-url">Title</label>
             <input id="playlist-name" class="form-control" type="text" placeholder="Enter a name">
             <br>
+            <label for="basic-url">Description</label>
             <textarea class="form-control" id="playlist-desc" rows="3"></textarea>
+            <br>
+            <label for="basic-url">Image URL</label>
+            <input id="playlist-image-url" class="form-control" type="text" placeholder="Enter a URL">
         </div>
 
         <div class="card group">
@@ -37,9 +42,7 @@
             <div class="form-inline">
                 <select class="custom-select my-1 mr-sm-2" id="song-select">
                     <option selected>Select a song</option>
-                    <option value="1">STAY (with Justin Bieber)</option>
-                    <option value="2">Leave Before You Love Me</option>
-                    <option value="3">Shivers</option>
+                    <!--Dynamically input-->
                 </select>
 
                 <a id="add-song" class="btn btn-outline rounded"><i class="bi-plus"></i> preview</a>

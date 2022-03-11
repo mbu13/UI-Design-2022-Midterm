@@ -406,3 +406,24 @@ th {
 .btn-outline {
     border: 1px solid rgba(0, 0, 0, .1);
 }
+
+label {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.success-alert a {
+    float: right;
+}
+
+.hidden {
+    display: none;
+}
+
+.watermark {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    color: rgb(0, 0, 0, 0.4);
+    font-size: 9px;
+}
