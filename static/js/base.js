@@ -73,4 +73,8 @@ $(document).ready(function() {
             }
         });
     }
+
+    $(document).on('click', ".genre", function(){ 
+        window.location = "/genres/" + $(this).data('name');
+    });
 })

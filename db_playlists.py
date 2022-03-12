@@ -6,7 +6,7 @@ all_playlists = {
         "dateCreated": "1646181966",
         "description": "Set it off with these epic anthems. Only good vibes here!",
         "createdBy": "Adio Admin",
-        "tracks": [1, 2]
+        "tracks": [1, 2, 3, 4, 6]
     },
     2 : {
         "id": 2,
@@ -15,7 +15,7 @@ all_playlists = {
         "dateCreated": "1646181966",
         "description": "Somehow, heartbreak feels good in a place like this.",
         "createdBy": "Adio Admin",
-        "tracks": [1, 2]
+        "tracks": [8, 9]
     },
     3 : {
         "id": 3,
@@ -24,7 +24,7 @@ all_playlists = {
         "dateCreated": "1646181966",
         "description": "This fun, upbeat playlist will help get you up and ready to start your day!",
         "createdBy": "Adio Admin",
-        "tracks": [1, 2]
+        "tracks": [6, 5, 7]
     },
     4 : {
         "id": 4,
@@ -33,7 +33,7 @@ all_playlists = {
         "dateCreated": "1646181966",
         "description": "No dust was found after cleaning to this playlist.",
         "createdBy": "Adio Admin",
-        "tracks": [1, 2]
+        "tracks": [7, 5, 9, 2]
     },
     5 : {
         "id": 5,

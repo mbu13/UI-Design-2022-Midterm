@@ -1,10 +1,13 @@
 const USER = "Matt Bu";
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-    $('#nav-title').html("Playlists");
-    $('#nav-playlists').addClass('active');
-    $('#nav-title').attr('href', '/playlists');
+    var url = $(location).attr('href');
+    var parts = url.split("/");
+    var genre = parts[parts.length - 1]
+
+    $('#nav-title').html("Genres > " + genre);
+    $('#nav-genres').addClass('active');
 
     function clearPlaylists() {
         $("#my-playlists").empty();

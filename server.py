@@ -10,6 +10,7 @@ from db_songs import songs
 from db_recently_played import recently_played
 from db_user_playlists import user_playlists
 from db_playlists import all_playlists
+from db_genres import genre_playlists
 
 app = Flask(__name__)
 
@@ -33,6 +34,17 @@ def home():
 
     print(recently_played)
     return render_template('homepage.html', playlists=result_recommended, recent=result_recent)  
+
+@app.route('/genres/<name>', methods=["GET"])
+def genre_single(name):
+    result = {}
+
+    playlist_ids = genre_playlists.get(name.lower())
+
+    for id in playlist_ids:
+        result[id] = all_playlists.get(id)
+
+    return render_template('genre_view.html', playlists=result)
 
 @app.route('/playlists')
 def playlists():
@@ -91,19 +103,31 @@ def playlists_edit(id):
 def playlists_add():
     return render_template('playlist_add.html')  
 
+@app.route('/genres')
+def genres():
+    return render_template('genres.html')  
+
 # AJAX FUNCTIONS
 
 @app.route("/search/<query>", methods=["GET"])
 def search(query):
-    global songs 
-
     if not query:
         return render_template('search.html', results=None)
 
-    results = []
+    results = {"songs" : [], "playlists" : {}}
+
+    # Search songs
     for k,v in songs.items():
-        if query.lower() in v['name'].lower():
-            results.append(songs[k])
+        if query.lower() in v['name'].lower() \
+            or query.lower() in v['artists'][0]['name'].lower() \
+            or query.lower() in v['description'].lower() :
+            results["songs"].append(songs[k])
+
+    # Search playlists
+    for k,v in all_playlists.items():
+        if query.lower() in v['name'].lower() \
+            or query.lower() in v['description'].lower():
+            results["playlists"][k] = all_playlists[k]
 
     return render_template('search.html', results=results)
 

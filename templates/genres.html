@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script src="{{ url_for('static', filename = 'js/genres.js') }}"></script>
+
+<br>
+
+<div id="genres">
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="genre" data-name="happy">
+          <img src="{{ url_for('static', filename = 'images/stock-happy.png') }}" class="img-fluid rounded genre-lg">
+          <p class="genre-title">Happy</p>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="genre" data-name="chill">
+          <img src="{{ url_for('static', filename = 'images/stock-chill.png') }}" class="img-fluid rounded genre-lg">
+          <p class="genre-title">Chill</p>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="genre" data-name="sad">
+          <img src="{{ url_for('static', filename = 'images/stock-sad.png') }}" class="img-fluid rounded genre-lg">
+          <p class="genre-title">Sad</p>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="genre" data-name="study">
+          <img src="{{ url_for('static', filename = 'images/stock-study.png') }}" class="img-fluid rounded genre-lg">
+          <p class="genre-title">Study</p>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="genre" data-name="party">
+          <img src="{{ url_for('static', filename = 'images/stock-party.png') }}" class="img-fluid rounded genre-lg">
+          <p class="genre-title">Party</p>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="genre" data-name="cooking">
+          <img src="{{ url_for('static', filename = 'images/stock-food.png') }}" class="img-fluid rounded genre-lg">
+          <p class="genre-title">Cooking</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+{% endblock %}

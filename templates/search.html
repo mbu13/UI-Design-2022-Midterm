@@ -20,12 +20,28 @@
 <h2>Search Results for "<b id="query"></b>"</h2>
 <br>
 
-<div id="search-body">
-    <div class="card" style="width: 18rem;">
-        <ul id="search-results" class="list-group list-group-flush">
-            <!--Dynamic content-->
-        </ul>
-    </div>
+<div id="playlist-results">
+    
+    <div class="card group">
+        <b class="playlist-title">Playlists <span id="playlists-count"></span></b>
+        <table class="table">
+            <tbody id="playlists">
+                <!--Dynamically input-->
+            </tbody>
+        </table>
+    </div> 
+</div>
+
+<div id="song-results">
+    
+    <div class="card group">
+        <b class="playlist-title">Songs <span id="songs-count"></span></b>
+        <table class="table">
+            <tbody id="songs">
+                <!--Dynamically input-->
+            </tbody>
+        </table>
+    </div> 
 </div>
 
 {% endblock %}

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script src="{{ url_for('static', filename = 'js/genre_view.js') }}"></script>
+
+<script>
+    let playlists = {{ playlists | tojson}};
+</script>
+
+<br>
+
+<br>
+<div class="card group">
+    <table class="table">
+        <tbody id="my-playlists">
+            <!--Dynamically input-->
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock %}

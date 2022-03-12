@@ -262,6 +262,7 @@ th {
 }
 
 .genre {
+    position: relative;
     transition: transform .2s;
 }
 
@@ -426,4 +427,19 @@ label {
     left: 1rem;
     color: rgb(0, 0, 0, 0.4);
     font-size: 9px;
+}
+
+.genre-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    z-index: 100;
+    color: white !important;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.genre-lg {
+    margin-bottom: 1.5rem;
 }

@@ -19,7 +19,7 @@ $(document).ready(function() {
 
         $("#playlist").append(
             '<tr id="' + index + "-" + song.id + '"> \
-                <td class="td-thumbnail"><img src="' + song.image + '" class="thumbnail rounded"></td> \
+                <td class="td-thumbnail"><img src="' + song.image + '" class="thumbnail rounded" alt-text="' + value.name + '"></td> \
                 <td class="td-description"> \
                     <h7 class="song-title">' + song.name + '</h7> \
                     <p class="song-subtitle">' + song.artists[0].name + '</p> \
@@ -58,6 +58,14 @@ $(document).ready(function() {
     });
 
     $(document).on('click', "#save-edit", function() { 
+        $('#add-form').submit(function(e){
+            e.preventDefault();  
+        });
+
+        if ($("#playlist-name").val() == "" || $("#playlist-image-url").val() == "") {
+            return;
+        }
+
         let new_fields = {}
 
         new_fields.name = $("#playlist-name").val();

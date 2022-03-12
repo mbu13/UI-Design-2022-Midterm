@@ -48,7 +48,7 @@ $(document).ready(function() {
             $("#playlist").append(
                 '<tr> \
                     <th>' + index + '</th> \
-                    <td class="td-thumbnail"><img src="' + value.image + '" class="thumbnail rounded"></td> \
+                    <td class="td-thumbnail"><img src="' + value.image + '" class="thumbnail rounded" alt-text="' + value.name + '"></td> \
                     <td class="td-description"> \
                         <h7 class="song-title">' + value.name + '</h7> \
                         <p class="song-subtitle">' + value.artists[0].name + '</p> \

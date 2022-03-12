@@ -83,4 +83,46 @@ songs = {
         "dateReleased": "1646181966",
         "description": "BTS."
     },
+    7: {
+        "id": 7,
+        "image": "https://i.scdn.co/image/ab67616d0000b273e6f407c7f3a0ec98845e4431",
+        "name": "Peaches (feat. Daniel Caesar & Giveon)",
+        "youtube": "https://www.youtube.com/embed/tQ0yjYUFKAE",
+        "artists": [
+            {
+                "name": "Justin Bieber"
+            }
+        ],
+        "dateReleased": "1646181966",
+        "description": "The Peach State."
+    },
+    8: {
+        "id": 8,
+        "image": "https://i.scdn.co/image/ab67616d0000b273b62de78380d082027bc37240",
+        "name": "Let Somebody Go (Kygo Remix)",
+        "youtube": "https://www.youtube.com/embed/WXG_3Uktfms",
+        "artists": [
+            {
+                "name": "Coldplay"
+            },
+            {
+                "name": "Selena Gomez"
+            }
+        ],
+        "dateReleased": "1646181966",
+        "description": "Sad beats."
+    },
+    9: {
+        "id": 9,
+        "image": "https://i.scdn.co/image/ab67616d0000b2738583df1a14bea9175f9ac520",
+        "name": "Don't Start Now",
+        "youtube": "https://www.youtube.com/embed/oygrmJFKYZY",
+        "artists": [
+            {
+                "name": "Dua Lipa"
+            }
+        ],
+        "dateReleased": "1646181966",
+        "description": "The Queen herself."
+    },
 }

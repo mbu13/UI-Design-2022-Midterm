@@ -20,7 +20,7 @@ $(document).ready(function () {
                 '<div class="col-3"> \
                     <div class="card card-playlist" data-target="' + value.id + '"> \
                         <div class="img-container"> \
-                            <img src="' + value.image + '" class="img-fluid rounded"> \
+                            <img src="' + value.image + '" class="img-fluid rounded" alt-text="' + value.name + '"> \
                             <a class="btn overlay rounded"><i class="bi-play-fill"></i></a> \
                         </div> \
                         <h7 class="song-title">' + value.name + '</h7> \
@@ -42,7 +42,7 @@ $(document).ready(function () {
             $("#recently-played").prepend(
                 '<tr> \
                     <th>' + index + '</th> \
-                    <td class="td-thumbnail"><img src="' + value.image + '" class="thumbnail rounded"></td> \
+                    <td class="td-thumbnail"><img src="' + value.image + '" class="thumbnail rounded" alt-text="' + value.name + '"></td> \
                     <td> \
                         <p class="song-title">' + value.name + '</p> \
                         <p class="song-subtitle">' + value.artists[0].name + '</p> \
